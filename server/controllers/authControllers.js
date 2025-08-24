@@ -9,7 +9,7 @@ const sendEmail = require("../utils/Email");
 // get profile
 exports.getProfile = catchAsync(async (req, res, next) => {
   const user = await User.findById(req.user._id).populate("listing");
-  res.status(200).json({
+  res.header("Access-Control-Allow-Credentials", "true").status(200).json({
     status: "success",
     user,
   });
