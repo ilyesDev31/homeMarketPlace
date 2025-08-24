@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 const HomeSlider = () => {
   const { data, isLoading, error, isFetching } = useGetAllListingsQuery();
   const navigate = useNavigate();
-  const listings = data && data.listings ? data.listings : [];
   const url = import.meta.env.VITE_IMAGES_URL;
   console.log(data);
   if (isLoading && !data) return "Loading ...";
@@ -14,7 +13,7 @@ const HomeSlider = () => {
       slidesPerView={1}
       pagination={{ clickable: true }}
     >
-      {listings.map((a, i) => (
+      {data.listings.map((a, i) => (
         <SwiperSlide
           key={i}
           onClick={() => navigate(`/category/${a.type}/${a._id}`)}
