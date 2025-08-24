@@ -24,7 +24,11 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(hpp());
 app.use(
   cors({
-    origin: ["http://localhost:5173", process.env.FRONTEND_URL],
+    origin: [
+      "http://localhost:5173",
+      process.env.FRONTEND_URL,
+      "https://home-market-place-nine.vercel.app",
+    ],
     credentials: true,
   })
 );
