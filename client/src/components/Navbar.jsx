@@ -1,10 +1,9 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { NavLink, Link } from "react-router-dom";
-import OfferIcon from "../assets/svg/LocalOfferIcon.svg?react";
-import ExploreIcon from "../assets/svg/exploreIcon.svg?react";
-import PersonIcon from "../assets/svg/PersonOutlineIcon.svg?react";
+import OfferIcon from "../assets/svg/LocalOfferIcon.svg";
+import ExploreIcon from "../assets/svg/exploreIcon.svg";
+import PersonIcon from "../assets/svg/PersonOutlineIcon.svg";
 const Navbar = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   return (
     <footer className="navbar">

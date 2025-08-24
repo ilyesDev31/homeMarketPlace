@@ -4,7 +4,6 @@ import { useGetListingByCategoryQuery } from "../slices/listingApiSlice";
 import { setListing } from "../slices/listingSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
 import Spinner from "../components/Spinner";
 import SingleListing from "../components/SingleListing";
 import { useState } from "react";

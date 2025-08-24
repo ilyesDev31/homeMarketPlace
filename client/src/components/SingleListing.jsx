@@ -1,4 +1,4 @@
-import DeleteIcon from "../assets/svg/DeleteIcon.svg?react";
+import DeleteIcon from "../assets/svg/DeleteIcon.svg";
 import bedIcon from "../assets/svg/bedIcon.svg";
 import bathIcon from "../assets/svg/bathtubIcon.svg";
 import { Link } from "react-router-dom";

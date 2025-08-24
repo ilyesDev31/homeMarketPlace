@@ -5,7 +5,6 @@ import { setUser } from "../slices/userSlice";
 import { useDispatch } from "react-redux";
 import Spinner from "./Spinner";
 const PrivateRoute = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { data, error, isLoading, isFetching } = useGetUserQuery();
 

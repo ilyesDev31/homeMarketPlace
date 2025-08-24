@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import ArrowRightIcon from "../assets/svg/keyboardArrowRightIcon.svg?react";
+import ArrowRightIcon from "../assets/svg/keyboardArrowRightIcon.svg";
 import Eyes from "../assets/svg/visibilityIcon.svg";
 import { useGetUserQuery, useRegisterMutation } from "../slices/userAuthSlice";
 import { toast } from "react-toastify";

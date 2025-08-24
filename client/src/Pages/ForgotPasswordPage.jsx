@@ -4,7 +4,7 @@ import { useGetUserQuery } from "../slices/userAuthSlice";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import ArrowRightIcon from "../assets/svg/keyboardArrowRightIcon.svg?react";
+import ArrowRightIcon from "../assets/svg/keyboardArrowRightIcon.svg";
 import { useForgotPasswordMutation } from "../slices/userAuthSlice";
 const ForgotPasswordPage = () => {
   const { data, error, isLoading, isFetching } = useGetUserQuery();
