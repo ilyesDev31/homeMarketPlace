@@ -16,7 +16,7 @@ const errorHandler = require("./middleware/errorHandler");
 // dealing with data url and body
 app.use(express.json({ limit: "32kb" }));
 app.use(express.urlencoded({ extended: true }));
-app.use(cookiesParser());
+app.use(cookiesParser()());
 // serving static files
 app.use(express.static(path.join(__dirname, "public")));
 // securing app
@@ -25,9 +25,9 @@ app.use(hpp());
 app.use(
   cors({
     origin: [
+      "https://home-market-place-nine.vercel.app",
       "http://localhost:5173",
       process.env.FRONTEND_URL,
-      "https://home-market-place-nine.vercel.app",
     ],
     credentials: true,
   })
