@@ -114,9 +114,9 @@ const ProfilePage = () => {
         <>
           <p className="listingText">Your Listings</p>
           <ul className="listingsList">
-            {listings.map((a, i) => (
+            {/* {listings.map((a, i) => (
               <SingleListing key={i} data={a} onDelete={true} />
-            ))}
+            ))} */}
           </ul>
         </>
       </main>

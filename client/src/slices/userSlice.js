@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-  profile: null,
+  profile: JSON.parse(localStorage.getItem("userInfo")) || null,
 };
 
 const userSlice = createSlice({
@@ -9,6 +9,7 @@ const userSlice = createSlice({
   reducers: {
     getUser: (state, action) => {
       state.profile = action.payload;
+      localStorage.setItem("userInfo", action.payload);
     },
     setUser: (state, action) => {
       state.profile = action.payload;
