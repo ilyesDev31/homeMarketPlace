@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useGetAllListingsQuery } from "../slices/listingApiSlice";
 import { useLocation } from "react-router-dom";
 import Spinner from "../components/Spinner";

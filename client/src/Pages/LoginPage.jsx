@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import ArrowRightIcon from "../assets/svg/keyboardArrowRightIcon.svg";
+import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import { setUser } from "../slices/userSlice";
 import { useLoginMutation, useGetUserQuery } from "../slices/userAuthSlice";
 import Spinner from "../components/Spinner";

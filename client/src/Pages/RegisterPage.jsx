@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import ArrowRightIcon from "../assets/svg/keyboardArrowRightIcon.svg";
-import Eyes from "../assets/svg/visibilityIcon.svg";
+import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
+import { ReactComponent as Eyes } from "../assets/svg/visibilityIcon.svg";
 import { useGetUserQuery, useRegisterMutation } from "../slices/userAuthSlice";
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
 const RegisterPage = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);

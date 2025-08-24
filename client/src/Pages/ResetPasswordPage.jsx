@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Eyes from "../assets/svg/visibilityIcon.svg";
+import { ReactComponent as Eyes } from "../assets/svg/visibilityIcon.svg";
 import { Link, Navigate } from "react-router-dom";
-import ArrowRightIcon from "../assets/svg/keyboardArrowRightIcon.svg";
+import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import { useNavigate } from "react-router-dom";
 import {
   useCheckPasswordTokenQuery,
