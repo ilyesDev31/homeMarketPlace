@@ -7,16 +7,15 @@ import Spinner from "./Spinner";
 const PrivateRoute = () => {
   const dispatch = useDispatch();
   const { data, error, isLoading, isFetching } = useGetUserQuery();
-  console.log(data);
+
   useEffect(() => {
     if (!isLoading && data) {
       dispatch(setUser(data.user));
     }
   }, [data, isLoading, dispatch]);
-  if (error) return <p> {error.data.message} </p>;
+  if (error) return <Navigate to="/login" />;
   if (isLoading) return <Spinner />;
-  if (!isLoading && !isFetching && !data)
-    return <Navigate to="/login" replace />;
+  if (!isLoading && !data) return <Navigate to="/login" replace />;
   return <Outlet />;
 };
 
