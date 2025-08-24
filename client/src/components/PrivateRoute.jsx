@@ -15,7 +15,8 @@ const PrivateRoute = () => {
   }, [data, isLoading, dispatch]);
   if (error) return <p> {error.data.message} </p>;
   if (isLoading) return <Spinner />;
-  if (!isLoading && !data) return <Navigate to="/login" replace />;
+  if (!isLoading && !isFetching && !data)
+    return <Navigate to="/login" replace />;
   return <Outlet />;
 };
 
