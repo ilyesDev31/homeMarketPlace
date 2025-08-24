@@ -13,7 +13,7 @@ const PrivateRoute = () => {
       dispatch(setUser(data.user));
     }
   }, [data, isLoading, dispatch]);
-  if (error) return <Navigate to="/login" />;
+  if (error) return <p> {error.data.message} </p>;
   if (isLoading) return <Spinner />;
   if (!isLoading && !data) return <Navigate to="/login" replace />;
   return <Outlet />;
