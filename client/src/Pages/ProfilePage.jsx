@@ -11,6 +11,7 @@ import Spinner from "../components/Spinner";
 import { setListing } from "../slices/listingSlice";
 import { useDispatch } from "react-redux";
 import SingleListing from "../components/SingleListing";
+import { setUser } from "../slices/userSlice";
 const ProfilePage = () => {
   const [logout] = useLogoutMutation();
   const [updateMe] = useUpdateMeMutation();
@@ -37,6 +38,7 @@ const ProfilePage = () => {
     e.preventDefault();
     try {
       const res = await logout().unwrap();
+      dispatch(setUser(null));
       navigate("/login");
       window.location = "/login";
     } catch (error) {
@@ -114,9 +116,9 @@ const ProfilePage = () => {
         <>
           <p className="listingText">Your Listings</p>
           <ul className="listingsList">
-            {/* {listings.map((a, i) => (
+            {listings.map((a, i) => (
               <SingleListing key={i} data={a} onDelete={true} />
-            ))} */}
+            ))}
           </ul>
         </>
       </main>

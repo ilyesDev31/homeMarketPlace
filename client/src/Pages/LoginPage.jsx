@@ -8,11 +8,20 @@ import { useDispatch } from "react-redux";
 import Eyes from "../assets/svg/visibilityIcon.svg";
 import { toast } from "react-toastify";
 const LoginPage = () => {
-  const [login, { isLoading, error }] = useLoginMutation();
-  const { data, error2, isLoading2, isFetching } = useGetUserQuery();
+  const [login] = useLoginMutation();
+  const { data, isLoading, isSuccess, error } = useGetUserQuery();
+
+  console.log(data);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  console.log(data, isSuccess);
+  useEffect(() => {
+    console.log("Login data:", data); // Add this
+    if (isSuccess && data.user) {
+      dispatch(setUser(data.user));
+      navigate("/profile");
+    }
+  }, [isSuccess, data, dispatch, navigate]);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -36,18 +45,16 @@ const LoginPage = () => {
     }
     try {
       const res = await login(formData).unwrap();
-      dispatch(setUser(res.user));
+      console.log(res);
       const username = res.user.name;
       navigate("/");
       toast.success("welcome " + username);
     } catch (error) {
-      toast.error(error.data.message);
+      console.log(error);
+      // toast.error(error.data.message);
     }
   };
-  if (data) return <Navigate to="/profile" />;
-  return isFetching ? (
-    <Spinner />
-  ) : (
+  return (
     <>
       <div className="pageContainer">
         <header>
