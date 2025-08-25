@@ -20,6 +20,8 @@ const LoginPage = () => {
     if (isSuccess && data.user) {
       dispatch(setUser(data.user));
       navigate("/profile");
+    } else {
+      dispatch(setUser(null));
     }
   }, [isSuccess, data, dispatch, navigate]);
   const [showPassword, setShowPassword] = useState(false);
