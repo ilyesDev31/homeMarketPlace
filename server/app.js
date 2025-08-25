@@ -7,7 +7,6 @@ const sanitize = require("express-mongo-sanitize");
 const limit = require("express-rate-limit");
 const path = require("path");
 const cookiesParser = require("cookie-parser");
-const morgan = require("morgan");
 // importing routes
 const listingRoutes = require("./routes/listingRoutes");
 const userRoutes = require("./routes/userRoutes");
