@@ -26,6 +26,7 @@ app.use(
     origin: [
       "https://home-market-place-nine.vercel.app",
       "http://localhost:5173",
+      "https://homemarketpp.netlify.app/",
       process.env.FRONTEND_URL,
     ],
     credentials: true,
